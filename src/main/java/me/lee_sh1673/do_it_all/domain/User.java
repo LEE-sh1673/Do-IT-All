@@ -1,8 +1,10 @@
 package me.lee_sh1673.do_it_all.domain;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
-@Data
+@RequiredArgsConstructor
+@Getter
 public class User {
 
     private final Long id;

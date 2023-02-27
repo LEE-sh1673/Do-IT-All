@@ -37,11 +37,26 @@ test {
 }
 
 jacocoTestReport {
-    executionData(fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec"))
 
     reports {
         html.enabled true
         xml.enabled true
         csv.enabled false
+    }
+}
+
+
+jacocoTestCoverageVerification {
+
+    violationRules {
+        rule {
+            element = 'CLASS'
+
+            limit {
+                counter = 'BRANCH'
+                value = 'COVEREDRATIO'
+                minimum = 0.70
+            }
+        }
     }
 }
